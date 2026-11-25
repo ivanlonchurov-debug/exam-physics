@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Физика 7 класс | Экзамен 2026</title>
+
+    <!-- Yandex.Metrika counter -->
+    <script>
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
+        })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=106541509', 'ym');
+
+        ym(106541509, 'init', {
+            webvisor: true,
+            clickmap: true,
+            ecommerce: 'dataLayer',
+            referrer: document.referrer,
+            url: location.href,
+            accurateTrackBounce: true,
+            trackLinks: true
+        });
+    </script>
+    <!-- /Yandex.Metrika counter -->
+
+    <style>
+        :root {
+            --bg-base: #050814;
+            --mesh-bg:
+                radial-gradient(circle at 15% 12%, rgba(56, 189, 248, 0.36) 0%, transparent 42%),
+                radial-gradient(circle at 86% 18%, rgba(168, 85, 247, 0.34) 0%, transparent 44%),
+                radial-gradient(circle at 72% 84%, rgba(16, 185, 129, 0.28) 0%, transparent 45%),
+                radial-gradient(circle at 20% 82%, rgba(59, 130, 246, 0.28) 0%, transparent 44%);
+
+            /* Apple Liquid Glass токены (Dark) */
+            --glass-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.05) 55%, rgba(255, 255, 255, 0.09) 100%);
+            --glass-card: linear-gradient(155deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.03) 100%);
+            --glass-elevated: rgba(20, 27, 45, 0.56);
+            --glass-border: rgba(255, 255, 255, 0.24);
+            --glass-border-soft: rgba(255, 255, 255, 0.14);
+            --glass-specular-top: rgba(255, 255, 255, 0.52);
+            --glass-specular-bottom: rgba(255, 255, 255, 0.12);
+            --glass-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 4px 16px rgba(0, 0, 0, 0.25);
+            --glass-blur: blur(28px) saturate(190%) brightness(1.06);
+
+            --text: #f8fafc;
+            --text-secondary: rgba(241, 245, 249, 0.68);
+            --accent: #38bdf8;
+            --accent-solid: #0ea5e9;
+            --indigo: #818cf8;
+            --success: #34d399;
+            --warning: #fbbf24;
+            --danger: #fb7185;
+
+            --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --smooth: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        html[data-theme="light"] {
+            --bg-base: #eaf2ff;
+            --mesh-bg:
+                radial-gradient(circle at 14% 10%, rgba(56, 189, 248, 0.38) 0%, transparent 46%),
+                radial-gradient(circle at 86% 16%, rgba(192, 132, 252, 0.34) 0%, transparent 45%),
+                radial-gradient(circle at 75% 86%, rgba(52, 211, 153, 0.28) 0%, transparent 48%),
+                radial-gradient(circle at 18% 84%, rgba(96, 165, 250, 0.30) 0%, transparent 46%);
+
+            /* Apple Liquid Glass токены (Light) */
+            --glass-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.44) 55%, rgba(255, 255, 255, 0.62) 100%);
+            --glass-card: linear-gradient(155deg, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.36) 100%);
+            --glass-elevated: rgba(255, 255, 255, 0.66);
+            --glass-border: rgba(255, 255, 255, 0.85);
+            --glass-border-soft: rgba(255, 255, 255, 0.65);
+            --glass-specular-top: rgba(255, 255, 255, 0.98);
+            --glass-specular-bottom: rgba(255, 255, 255, 0.45);
+            --glass-shadow: 0 20px 50px rgba(15, 23, 42, 0.12), 0 4px 14px rgba(15, 23, 42, 0.06);
+            --glass-blur: blur(30px) saturate(195%) brightness(1.03);
+
+            --text: #0f172a;
+            --text-secondary: rgba(15, 23, 42, 0.64);
+            --accent: #0284c7;
+            --accent-solid: #0284c7;
+            --indigo: #4f46e5;
+            --success: #059669;
+            --warning: #d97706;
+            --danger: #e11d48;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Inter, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text);
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.35s ease, color 0.35s ease;
+        }
+
+        /* Живой световой фон под стеклом */
+        .liquid-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+            background: var(--mesh-bg);
+        }
+
+        .liquid-blob {
+            position: absolute;
+            border-radius: 50%;
+            will-change: transform;
+            animation: drift 16s ease-in-out infinite alternate;
+        }
+
+        .blob-a {
+            width: 520px;
+            height: 520px;
+            top: -150px;
+            left: -130px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.42) 0%, transparent 68%);
+        }
+
+        .blob-b {
+            width: 540px;
+            height: 540px;
+            top: 22%;
+            right: -180px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.36) 0%, transparent 68%);
+            animation-delay: -5s;
+        }
+
+        .blob-c {
+            width: 480px;
+            height: 480px;
+            bottom: -160px;
+            left: 18%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.32) 0%, transparent 68%);
+            animation-delay: -10s;
+        }
+
+        @keyframes drift {
+            0%   { transform: translate3d(0, 0, 0) scale(1); }
+            100% { transform: translate3d(38px, -32px, 0) scale(1.08); }
+        }
+
+        .app-shell {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 20px 16px 64px;
+        }
+
+        /* Базовый класс Liquid Glass поверхности */
+        .liquid-surface {
+            position: relative;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            border-radius: 26px;
+            box-shadow:
+                inset 0 1.5px 1px var(--glass-specular-top),
+                inset 0 -1px 1px var(--glass-specular-bottom),
+                var(--glass-shadow);
+            overflow: hidden;
+        }
+
+        /* Переливающийся блик на поверхности */
+        .liquid-surface::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            border-radius: inherit;
+            background: radial-gradient(
+                520px circle at var(--mx, 25%) var(--my, 0%),
+                rgba(255, 255, 255, 0.18),
+                transparent 48%
+            );
+            opacity: 0.75;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Шапка */
+        .topbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-badge {
+            width: 46px;
+            height: 46px;
+            border-radius: 15px;
+            display: grid;
+            place-items: center;
+            font-size: 1.4rem;
+            background: linear-gradient(145deg, rgba(56, 189, 248, 0.9), rgba(99, 102, 241, 0.9));
+            box-shadow:
+                inset 0 1.5px 1px rgba(255, 255, 255, 0.65),
+                0 8px 22px rgba(56, 189, 248, 0.35);
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 1.18rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .brand p {
+            margin: 2px 0 0;
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .topbar-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Кнопки-капсулы Liquid Glass */
+        .glass-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            min-height: 42px;
+            padding: 9px 17px;
+            border-radius: 999px;
+            border: 1px solid var(--glass-border-soft);
+            background: var(--glass-card);
+            box-shadow:
+                inset 0 1px 0 var(--glass-specular-top),
+                inset 0 -1px 0 var(--glass-specular-bottom),
+                0 6px 18px rgba(0, 0, 0, 0.14);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: transform 0.25s var(--spring), background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .glass-btn:hover:not(:disabled) {
+            transform: translateY(-1.5px) scale(1.015);
+            border-color: var(--glass-border);
+            box-shadow:
+                inset 0 1px 0 var(--glass-specular-top),
+                0 10px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .glass-btn:active:not(:disabled) {
+            transform: scale(0.96);
+        }
+
+        .glass-btn:disabled {
+            opacity: 0.48;
+            cursor: not-allowed;
+        }
+
+        .glass-btn-primary {
+            background: linear-gradient(145deg, rgba(14, 165, 233, 0.92), rgba(99, 102, 241, 0.92));
+            border-color: rgba(255, 255, 255, 0.42);
+            color: #ffffff;
+            box-shadow:
+                inset 0 1.5px 1px rgba(255, 255, 255, 0.55),
+                0 10px 26px rgba(14, 165, 233, 0.34);
+        }
+
+        .glass-btn-primary:hover:not(:disabled) {
+            box-shadow:
+                inset 0 1.5px 1px rgba(255, 255, 255, 0.7),
+                0 14px 30px rgba(14, 165, 233, 0.44);
+        }
+
+        .glass-btn-success {
+            background: linear-gradient(145deg, rgba(16, 185, 129, 0.24), rgba(16, 185, 129, 0.12));
+            border-color: rgba(52, 211, 153, 0.5);
+            color: var(--success);
+        }
+
+        .glass-btn-warning {
+            background: linear-gradient(145deg, rgba(245, 158, 11, 0.22), rgba(245, 158, 11, 0.1));
+            border-color: rgba(251, 191, 36, 0.45);
+            color: var(--warning);
+        }
+
+        .glass-btn-danger {
+            background: linear-gradient(145deg, rgba(244, 63, 94, 0.22), rgba(244, 63, 94, 0.1));
+            border-color: rgba(251, 113, 133, 0.45);
+            color: var(--danger);
+        }
+
+        .glass-btn-sm {
+            min-height: 36px;
+            padding: 6px 13px;
+            font-size: 0.83rem;
+        }
+
+        /* Сегментированный переключатель в стиле iOS 26 */
+        .segmented-nav {
+            display: inline-flex;
+            gap: 6px;
+            padding: 6px;
+            margin-bottom: 16px;
+            border-radius: 999px;
+            max-width: 100%;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .segmented-nav::-webkit-scrollbar { display: none; }
+
+        .seg-btn {
+            position: relative;
+            z-index: 1;
+            min-height: 38px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            background: transparent;
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.25s var(--smooth);
+        }
+
+        .seg-btn:hover {
+            color: var(--text);
+        }
+
+        .seg-btn.active {
+            background: var(--glass-card);
+            border-color: var(--glass-border);
+            color: var(--text);
+            box-shadow:
+                inset 0 1px 0 var(--glass-specular-top),
+                0 4px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Секции */
+        .view-section {
+            display: none;
+            animation: glassEnter 0.32s var(--smooth);
+        }
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes glassEnter {
+            from { opacity: 0; transform: translateY(10px) scale(0.99); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .panel-pad {
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        /* Элементы выбора */
+        .controls-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .glass-input, .glass-select {
+            width: 100%;
+            min-height: 44px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            border: 1px solid var(--glass-border-soft);
+            background: var(--glass-elevated);
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 -1px 0 var(--glass-specular-bottom);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.94rem;
+            font-weight: 500;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .glass-select option {
+            background: #111827;
+            color: #f8fafc;
+        }
+
+        html[data-theme="light"] .glass-select option {
+            background: #ffffff;
+            color: #0f172a;
+        }
+
+        .glass-input:focus, .glass-select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22);
+        }
+
+        /* Лента номеров билетов 1..10 */
+        .ticket-pills {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(10, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        .ticket-pill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 6px 4px;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border-soft);
+            background: var(--glass-card);
+            box-shadow: inset 0 1px 0 var(--glass-specular-top);
+            color: var(--text);
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: transform 0.25s var(--spring), background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .ticket-pill:hover {
+            transform: translateY(-2px);
+            border-color: var(--glass-border);
+        }
+
+        .ticket-pill:active {
+            transform: scale(0.94);
+        }
+
+        .ticket-pill.active {
+            background: linear-gradient(145deg, rgba(14, 165, 233, 0.92), rgba(99, 102, 241, 0.92));
+            border-color: rgba(255, 255, 255, 0.55);
+            color: #fff;
+            box-shadow:
+                inset 0 1.5px 1px rgba(255, 255, 255, 0.6),
+                0 8px 20px rgba(14, 165, 233, 0.35);
+        }
+
+        .pill-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin-top: 4px;
+            background: var(--text-secondary);
+            opacity: 0.35;
+        }
+
+        .ticket-pill.has-answers .pill-dot {
+            background: var(--warning);
+            opacity: 1;
+        }
+
+        .ticket-pill.studied .pill-dot {
+            background: var(--success);
+            opacity: 1;
+        }
+
+        .ticket-pill.active .pill-dot {
+            background: #fff;
+            opacity: 1;
+        }
+
+        /* Полоска режима экзамена */
+        .exam-bar {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 14px 20px;
+            margin-bottom: 16px;
+            border-color: rgba(251, 191, 36, 0.45);
+        }
+
+        .exam-bar.active {
+            display: flex;
+        }
+
+        .exam-timer {
+            font-size: 1.35rem;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+            color: var(--warning);
+        }
+
+        /* Карточка билета */
+        .ticket-header-box {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-bottom: 16px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--glass-border-soft);
+        }
+
+        .ticket-title {
+            margin: 0;
+            font-size: 1.55rem;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+
+        .ticket-sub {
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+
+        .ticket-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .glass-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            border: 1px solid var(--glass-border-soft);
+            background: var(--glass-card);
+            box-shadow: inset 0 1px 0 var(--glass-specular-top);
+        }
+
+        .badge-ready {
+            color: var(--success);
+            border-color: rgba(52, 211, 153, 0.42);
+        }
+
+        .badge-dev {
+            color: var(--warning);
+            border-color: rgba(251, 191, 36, 0.42);
+        }
+
+        .badge-info {
+            color: var(--accent);
+            border-color: rgba(56, 189, 248, 0.42);
+        }
+
+        /* Карточки вопросов */
+        .items-stack {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .q-card {
+            position: relative;
+            background: var(--glass-card);
+            border: 1px solid var(--glass-border-soft);
+            border-radius: 20px;
+            padding: 18px;
+            box-shadow:
+                inset 0 1px 0 var(--glass-specular-top),
+                inset 0 -1px 0 var(--glass-specular-bottom),
+                0 8px 24px rgba(0, 0, 0, 0.14);
+            transition: border-color 0.2s ease, transform 0.25s var(--smooth);
+        }
+
+        .q-card.task-card {
+            border-color: rgba(129, 140, 248, 0.42);
+            background: linear-gradient(150deg, rgba(56, 189, 248, 0.10), rgba(129, 140, 248, 0.11));
+        }
+
+        .q-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .q-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+        }
+
+        .q-text {
+            font-size: 1.04rem;
+            font-weight: 600;
+            margin: 0 0 14px;
+            letter-spacing: -0.01em;
+        }
+
+        .q-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .toggle-btn {
+            min-height: 36px;
+            padding: 7px 15px;
+            border-radius: 999px;
+            border: 1px solid var(--glass-border-soft);
+            background: var(--glass-card);
+            box-shadow: inset 0 1px 0 var(--glass-specular-top);
+            color: var(--text);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.22s var(--spring), background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .toggle-btn:hover {
+            transform: translateY(-1px);
+            border-color: var(--accent);
+        }
+
+        .toggle-btn:active {
+            transform: scale(0.96);
+        }
+
+        .toggle-btn.is-open {
+            background: rgba(56, 189, 248, 0.2);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Плавный аккордеон без max-height */
+        .accordion {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s var(--smooth), margin-top 0.3s var(--smooth);
+            margin-top: 0;
+        }
+
+        .accordion.is-open {
+            grid-template-rows: 1fr;
+            margin-top: 14px;
+        }
+
+        .accordion-inner {
+            overflow: hidden;
+            min-height: 0;
+        }
+
+        .answer-lens {
+            padding: 15px 17px;
+            border-radius: 16px;
+            background: var(--glass-elevated);
+            border: 1px solid var(--glass-border-soft);
+            box-shadow: inset 0 1px 0 var(--glass-specular-bottom);
+            font-size: 0.96rem;
+        }
+
+        .answer-lens p { margin: 0 0 10px; }
+        .answer-lens p:last-child { margin-bottom: 0; }
+        .answer-lens ul { margin: 6px 0 6px; padding-left: 20px; }
+        .answer-lens li { margin-bottom: 6px; }
+
+        .dev-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--warning);
+            font-weight: 600;
+        }
+
+        .task-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .sub-box-title {
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        /* Лоадер */
+        .loader-wrap {
+            display: none;
+            text-align: center;
+            padding: 40px 16px;
+        }
+        .loader-wrap.active {
+            display: block;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            border: 3px solid var(--glass-border-soft);
+            border-top-color: var(--accent);
+            animation: spin 0.75s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Критерии */
+        .criteria-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .grade-card {
+            padding: 16px;
+            border-radius: 18px;
+            border: 1px solid var(--glass-border-soft);
+            background: var(--glass-card);
+            box-shadow: inset 0 1px 0 var(--glass-specular-top);
+        }
+
+        .grade-card h3 {
+            margin: 0 0 6px;
+            font-size: 1.05rem;
+        }
+
+        .mistakes-list {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            padding-left: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px 24px;
+        }
+
+        /* Уведомления */
+        .toast-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: calc(100vw - 32px);
+        }
+
+        .toast {
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: var(--glass-elevated);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            box-shadow: inset 0 1px 0 var(--glass-specular-top), var(--glass-shadow);
+            color: var(--text);
+            font-size: 0.88rem;
+            font-weight: 600;
+            animation: glassEnter 0.25s var(--smooth);
+        }
+
+        /* Адаптив для телефонов */
+        @media (max-width: 760px) {
+            .criteria-grid { grid-template-columns: 1fr; }
+            .mistakes-list { grid-template-columns: 1fr; }
+            .task-split { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .app-shell { padding: 12px 10px 44px; }
+            .liquid-surface { border-radius: 22px; }
+            .topbar { padding: 14px 16px; }
+            .panel-pad { padding: 15px; }
+            .controls-grid { grid-template-columns: 1fr; }
+            .ticket-pills { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+            .ticket-title { font-size: 1.32rem; }
+            .q-card { padding: 15px; border-radius: 18px; }
+            .topbar-actions { width: 100%; justify-content: space-between; }
+            .segmented-nav { display: flex; width: 100%; }
+            .seg-btn { flex: 1; padding: 8px 10px; font-size: 0.84rem; text-align: center; }
+            .toast-container { left: 16px; right: 16px; bottom: 14px; align-items: center; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .liquid-blob { animation: none; }
+            * { transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/106541509" style="position:absolute; left:-9999px;" alt=""></div>
+    </noscript>
+
+    <div class="liquid-backdrop" aria-hidden="true">
+        <div class="liquid-blob blob-a"></div>
+        <div class="liquid-blob blob-b"></div>
+        <div class="liquid-blob blob-c"></div>
+    </div>
+
+    <div class="app-shell">
+        <header class="liquid-surface topbar">
+            <div class="brand">
+                <div class="brand-badge" aria-hidden="true">⚛️</div>
+                <div>
+                    <h1>Физика | 7 класс</h1>
+                    <p>Экзамен 2026 • 10 билетов</p>
+                </div>
+            </div>
+            <div class="topbar-actions">
+                <button type="button" class="glass-btn glass-btn-sm" id="themeToggleBtn" aria-label="Переключить тему">🌙 Тёмная</button>
+                <button type="button" class="glass-btn glass-btn-sm glass-btn-warning" id="examModeBtn">⏱️ Экзамен</button>
+            </div>
+        </header>
+
+        <nav class="liquid-surface segmented-nav" aria-label="Разделы">
+            <button type="button" class="seg-btn active" data-view="ticketsView">📚 Билеты</button>
+            <button type="button" class="seg-btn" data-view="searchView">🔍 Поиск</button>
+            <button type="button" class="seg-btn" data-view="criteriaView">📋 Критерии</button>
+        </nav>
+
+        <!-- Вкладка 1: Билеты -->
+        <section id="ticketsView" class="view-section active">
+            <div class="liquid-surface panel-pad">
+                <div class="controls-grid">
+                    <select class="glass-select" id="ticketSelect" aria-label="Выберите билет"></select>
+                    <button type="button" class="glass-btn glass-btn-primary" id="randomTicketBtn">🎲 Случайный</button>
+                    <button type="button" class="glass-btn" id="toggleAllAnswersBtn">👁️ Показать все</button>
+                </div>
+                <div class="ticket-pills" id="ticketPills" aria-label="Быстрый выбор билета"></div>
+            </div>
+
+            <div class="liquid-surface exam-bar" id="examBar">
+                <div style="position:relative; z-index:1;">
+                    <strong>Режим экзамена:</strong> ответы скрыты, попробуйте рассказать билет самостоятельно.
+                </div>
+                <div style="position:relative; z-index:1; display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                    <span class="exam-timer" id="examTimer">15:00</span>
+                    <button type="button" class="glass-btn glass-btn-sm glass-btn-success" id="finishExamBtn">Завершить</button>
+                    <button type="button" class="glass-btn glass-btn-sm glass-btn-danger" id="cancelExamBtn">Отмена</button>
+                </div>
+            </div>
+
+            <div class="liquid-surface loader-wrap" id="loaderWrap" role="status" aria-live="polite">
+                <div class="spinner"></div>
+                <div>Перемешиваем билеты...</div>
+            </div>
+
+            <div class="liquid-surface panel-pad" id="ticketCard">
+                <div class="ticket-header-box">
+                    <div>
+                        <h2 class="ticket-title" id="ticketTitle">Билет №1</h2>
+                        <div class="ticket-sub" id="ticketReadinessText"></div>
+                    </div>
+                    <div class="ticket-meta" id="ticketMeta"></div>
+                </div>
+                <div class="items-stack" id="ticketItems"></div>
+            </div>
+        </section>
+
+        <!-- Вкладка 2: Поиск -->
+        <section id="searchView" class="view-section">
+            <div class="liquid-surface panel-pad">
+                <div style="position:relative; z-index:1; display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px;">
+                    <input type="search" class="glass-input" id="searchInput" placeholder="Поиск по законам, терминам, формулам (Гук, КПД, диффузия)..." style="flex:1; min-width:220px;">
+                    <select class="glass-select" id="searchFilter" aria-label="Фильтр готовности" style="width:auto; min-width:195px;">
+                        <option value="all">Все пункты</option>
+                        <option value="ready">Только с ответами</option>
+                        <option value="dev">Только «В разработке»</option>
+                    </select>
+                </div>
+                <div id="searchResults" class="items-stack"></div>
+            </div>
+        </section>
+
+        <!-- Вкладка 3: Критерии -->
+        <section id="criteriaView" class="view-section">
+            <div class="liquid-surface panel-pad">
+                <h2 style="position:relative; z-index:1; margin-top:0;">Критерии оценивания</h2>
+                <div class="criteria-grid">
+                    <div class="grade-card">
+                        <h3 style="color:var(--success);">Оценка «5»</h3>
+                        <p style="margin:0;">Задание полностью выполнено, все три темы раскрыты в полном объёме. Экзаменуемый ответил на дополнительные вопросы комиссии правильно. Фактические ошибки отсутствуют.</p>
+                    </div>
+                    <div class="grade-card">
+                        <h3 style="color:var(--accent);">Оценка «4»</h3>
+                        <p style="margin:0;">Задание выполнено, <strong>но</strong> одна из трёх тем раскрыта не в полном объёме, <strong>или</strong> не на все вопросы комиссии были даны ответы, <strong>или</strong> допущена одна фактическая ошибка.</p>
+                    </div>
+                    <div class="grade-card">
+                        <h3 style="color:var(--warning);">Оценка «3»</h3>
+                        <p style="margin:0;">Задание выполнено не полностью, две из трёх тем раскрыты не в полном объёме, <strong>или</strong> на вопросы комиссии нет ответа, <strong>или</strong> допущены две фактические ошибки.</p>
+                    </div>
+                    <div class="grade-card">
+                        <h3 style="color:var(--danger);">Оценка «2»</h3>
+                        <p style="margin:0;">Задание не выполнено, три темы билета не раскрыты, <strong>или</strong> допущены три фактические ошибки.</p>
+                    </div>
+                </div>
+
+                <h3 style="position:relative; z-index:1;">К фактическим ошибкам относятся:</h3>
+                <ol class="mistakes-list">
+                    <li>Неправильное название закона</li>
+                    <li>Неправильно названные единицы измерения</li>
+                    <li>Неверное название явления</li>
+                    <li>Неверное обозначение физической величины</li>
+                    <li>Неправильное название прибора</li>
+                    <li>Неверно назван учёный</li>
+                    <li>Неправильно приведены примеры</li>
+                    <li>Приведение примера из жизни без теоретической основы</li>
+                    <li>Фраза «Можно я своими словами?»</li>
+                    <li>Замена научных терминов на «бытовой», разговорный язык</li>
+                </ol>
+            </div>
+        </section>
+    </div>
+
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <script>
+        (function () {
+            'use strict';
+
+            const DEV_TEXT = 'В разработке';
+            const YM_ID = 106541509;
+            const STORAGE_PROGRESS = 'physics7_studied_v2';
+            const STORAGE_THEME = 'physics7_theme_v2';
+
+            const TICKETS = [
+                {
+                    id: 1,
+                    questions: [
+                        {
+                            title: 'Что изучает физика. Наблюдения и опыты. Измерение физических величин.',
+                            answer: `<p><strong>Физика</strong> — наука о природе, изучающая общие свойства мира и физические явления (механические, тепловые, световые, звуковые, электрические, магнитные). Задача физики — объяснять явления и открывать законы природы. Слово «физика» в русский язык ввёл М. В. Ломоносов.</p>
+<ul>
+<li><strong>Наблюдения и опыты:</strong> Изучение начинается с <strong>наблюдения</strong> (с помощью органов чувств или приборов). Затем ставят <strong>опыты (эксперименты)</strong> в специальных условиях. По результатам выдвигают <strong>гипотезы</strong> (предположения), проверяют их опытами и создают <strong>физическую теорию</strong>. Основатель экспериментальной физики — Галилео Галилей.</li>
+<li><strong>Измерение:</strong> <strong>Физическая величина</strong> — количественная характеристика тела или явления (длина <i>l</i>, время <i>t</i>, объём <i>V</i>). <strong>Измерить величину</strong> — значит сравнить её с однородной величиной, принятой за единицу. В системе СИ: длина — метр (м), время — секунда (с). Измерения бывают <strong>прямыми</strong> (сразу по прибору, например линейкой) и <strong>косвенными</strong> (по формуле, например объём <i>V</i> = <i>abc</i>).</li>
+</ul>`
+                        },
+                        { title: 'Сила упругости. Закон Гука.', answer: DEV_TEXT },
+                        { title: 'Мощность. Единицы мощности.', answer: DEV_TEXT }
+                    ],
+                    task: {
+                        text: 'Определите, какой кинетической энергией будет обладать пуля, вылетевшая из ружья. Скорость её при вылете из ружья равна 600 м/с, а масса – 7,5 г.',
+                        shortAnswer: DEV_TEXT,
+                        solution: DEV_TEXT
+                    }
+                },
+                {
+                    id: 2,
+                    questions: [
+                        {
+                            title: 'Цена деления прибора. Точность и погрешность измерения.',
+                            answer: `<ul>
+<li><strong>Цена деления</strong> — это значение измеряемой величины, соответствующее одному делению шкалы (промежутку между двумя ближайшими штрихами). Чтобы её найти, нужно из большего числа на шкале вычесть соседнее меньшее и разделить на число делений между ними.</li>
+<li><strong>Точность и погрешность:</strong> <strong>Абсолютная погрешность</strong> (Δ<i>a</i>) — это отклонение результата измерения от истинного значения. Записывают так: <i>A</i> = <i>a</i> ± Δ<i>a</i>.</li>
+<li>Погрешность возникает из-за неточности отсчёта (смотреть на шкалу нужно строго перпендикулярно) и несовершенства самого прибора.</li>
+<li>Обычно абсолютную погрешность принимают равной цене деления прибора.</li>
+<li>Чем меньше цена деления, тем выше точность измерения.</li>
+</ul>`
+                        },
+                        { title: 'Явление тяготения. Сила тяжести. Сила тяжести на других планетах.', answer: DEV_TEXT },
+                        { title: 'Рычаг. Равновесие сил на рычаге.', answer: DEV_TEXT }
+                    ],
+                    task: {
+                        text: 'Груз массой 30 кг поднимают на высоту 12 м с помощью неподвижного блока, действуя на верёвку силой 400 Н. Вычислите КПД установки.',
+                        shortAnswer: DEV_TEXT,
+                        solution: DEV_TEXT
+                    }
+                },
+                {
+                    id: 3,
+                    questions: [
+                        {
+                            title: 'Строение вещества. Молекулы. Броуновское движение. Диффузия в газах, жидкостях и твёрдых телах. Взаимное притяжение и отталкивание молекул.',
+                            answer: `<ul>
+<li><strong>Строение вещества и молекулы:</strong> Все вещества состоят из мельчайших частиц (атомов и молекул), между которыми есть промежутки (доказывается расширением тел при нагревании). <strong>Молекула</strong> — мельчайшая частица данного вещества (термин ввёл Пьер Гассенди). Молекулы состоят из атомов (например, вода H<sub>2</sub>O — из двух атомов водорода и одного атома кислорода).</li>
+<li><strong>Броуновское движение</strong> (открыл Роберт Броун в 1827 г.) — непрерывное беспорядочное движение мелких твёрдых частиц в жидкости или газе из-за неравномерных ударов молекул среды. Доказывает, что молекулы непрерывно и хаотично движутся.</li>
+<li><strong>Диффузия</strong> — взаимное проникновение соприкасающихся веществ друг в друга из-за беспорядочного движения молекул. Быстрее всего идёт в газах (запахи), медленнее в жидкостях (раствор медного купороса и вода), медленнее всего в твёрдых телах (свинец и золото). При нагревании диффузия ускоряется.</li>
+<li><strong>Притяжение и отталкивание:</strong> Между молекулами одновременно действуют притяжение и отталкивание. Притяжение заметно на расстояниях, сравнимых с размерами молекул (слипание гладких свинцовых цилиндров), а отталкивание — на ещё меньших расстояниях (поэтому твёрдые тела и жидкости трудно сжать).</li>
+</ul>`
+                        },
+                        { title: 'Вес тела. Чем отличается от массы? Динамометр.', answer: DEV_TEXT },
+                        { title: 'Момент силы.', answer: DEV_TEXT }
+                    ],
+                    task: {
+                        text: 'С плотины высотой 22 м за 10 минут падает 500 тонн воды. Какая мощность развивается при этом?',
+                        shortAnswer: DEV_TEXT,
+                        solution: DEV_TEXT
+                    }
+                },
+                {
+                    id: 4,
+                    questions: [
+                        {
+                            title: 'Агрегатные состояния вещества. Различие в молекулярном строении твёрдых тел, жидкостей и газов.',
+                            answer: `<p>Вещество бывает в трёх агрегатных состояниях: <strong>твёрдом</strong>, <strong>жидком</strong> и <strong>газообразном</strong> (например, лёд, вода, пар). Молекулы одного вещества во всех состояниях одинаковы, меняется только их расположение, движение и взаимодействие.</p>
+<ul>
+<li><strong>Твёрдые тела:</strong> Сохраняют форму и объём. Молекулы расположены очень плотно (в кристаллах — в строгом порядке), сильно притягиваются и лишь колеблются на одном месте.</li>
+<li><strong>Жидкости:</strong> Сохраняют объём, но меняют форму (текучи). Молекулы расположены близко, притяжение слабее, чем в твёрдых телах; молекулы колеблются и перескакивают с места на место.</li>
+<li><strong>Газы:</strong> Не имеют ни формы, ни объёма, легко сжимаются. Расстояния между молекулами во много раз больше их размеров, притяжение очень слабое, молекулы свободно разлетаются по всему сосуду.</li>
+</ul>`
+                        },
+                        { title: 'Сила трения. Трение покоя. Трение в природе и технике.', answer: DEV_TEXT },
+                        { title: 'Рычаги в технике, быту и природе.', answer: DEV_TEXT }
+                    ],
+                    task: {
+                        text: 'Какая работа совершается при подъёме гидравлического молота массой 20 т на высоту 120 см.',
+                        shortAnswer: DEV_TEXT,
+                        solution: DEV_TEXT
+                    }
+                },
+                {
+                    id: 5,
+                    questions: [
+                        {
+                            title: 'Механическое движение. Равномерное и неравномерное движение. Примеры равномерного и неравномерного движения.',
+                            answer: `<p><strong>1 (часть 1). Механическое движение.</strong> <em>(Равномерное и неравномерное движение — это § 15, его ещё не проходили — эта часть в разработке).</em></p>
+<ul>
+<li><strong>Механическое движение</strong> — изменение положения тела в пространстве относительно других тел с течением времени. Движение относительно (пассажир покоится относительно поезда, но движется относительно Земли).</li>
+<li><strong>Траектория</strong> — воображаемая линия, вдоль которой движется тело (бывает прямой и кривой).</li>
+<li><strong>Путь (<i>s</i>)</strong> — длина траектории, пройденная телом за некоторое время. Единица пути в СИ — метр (м).</li>
+</ul>`
+                        },
+                        { title: 'Давление. Единицы давления. Способы уменьшения и увеличения давления.', answer: DEV_TEXT },
+                        { title: 'Равенство работ при использовании простых механизмов. «Золотое правило» механики.', answer: DEV_TEXT }
+                    ],
+                    task: {
+                        text: 'Определите выталкивающую силу, действующую на камень объёмом 1,6 м³ в морской воде. Плотность морской воды 1030 кг/м³. Плотность камня 1800 кг/м³.',
+                        shortAnswer: DEV_TEXT,
+                        solution: DEV_TEXT
+                    }
+                },
+                {
+                    id: 6,
+                    questions: [
+                        { title: 'Скорость. Единицы скорости. Расчёт пути и времени движения.', answer: DEV_TEXT },
+                        { title: 'Давление газа. Передача давления жидкостями и газами. Закон Паскаля.', answer: DEV_TEXT },
+                        { title: 'Центр тяжести тела.', answer: DEV_TEXT }
+                    ],
+                    task: {
+                        text: 'Вычислите давление воды на дно одной из глубочайших морских впадин – Марианской, глубина которой 10900 м. Плотность морской воды 1030 кг/м³.',
+                        shortAnswer: DEV_TEXT,
+                        solution: DEV_TEXT
+                    }
+                },
+                {
+                    id: 7,
+                    questions: [
+                        { title: 'Инерция. Примеры инерции в жизни. «Плюсы» и «минусы».', answer: DEV_TEXT },
+                        { title: 'Давление в жидкости и газе. Расчёт давления жидкости на дно и стенки сосуда. Сообщающиеся сосуды.', answer: DEV_TEXT },
+                        { title: 'Коэффициент полезного действия механизма.', answer: DEV_TEXT }
+                    ],
+                    task: {
+                        text: 'Рассчитать давление, производимое на пол мальчиком, масса которого 45 кг, а площадь подошв его ботинок, соприкасающихся с полом, равна 300 см².',
+                        shortAnswer: DEV_TEXT,
+                        solution: DEV_TEXT
+                    }
+                },
+                {
+                    id: 8,
+                    questions: [
+                        { title: 'Масса тела. Единицы массы. Прибор для измерения массы.', answer: DEV_TEXT },
+                        { title: 'Вес воздуха. Атмосферное давление. Почему существует воздушная оболочка Земли. Из чего состоит воздушная оболочка Земли.', answer: DEV_TEXT },
+                        { title: 'Энергия. Потенциальная энергия.', answer: DEV_TEXT }
+                    ],
+                    task: {
+                        text: 'Водитель легкового автомобиля, движущегося равномерно со скоростью 90 км/ч, отвлёкся на 2 с от дороги. Какой путь за это время проехал автомобиль? Почему опасно отвлекать водителя от дороги?',
+                        shortAnswer: DEV_TEXT,
+                        solution: DEV_TEXT
+                    }
+                },
+                {
+                    id: 9,
+                    questions: [
+                        { title: 'Плотность вещества. Расчёт массы и объёма тела по его плотности.', answer: DEV_TEXT },
+                        { title: 'Архимедова сила. Плавание тел.', answer: DEV_TEXT },
+                        { title: 'Энергия. Кинетическая энергия.', answer: DEV_TEXT }
+                    ],
+                    task: {
+                        text: 'Пружина без нагрузки длиной 20 см имеет коэффициент жёсткости 20 Н/м. Какой станет длина пружины под действием силы 2 Н?',
+                        shortAnswer: DEV_TEXT,
+                        solution: DEV_TEXT
+                    }
+                },
+                {
+                    id: 10,
+                    questions: [
+                        { title: 'Сила. Виды сил.', answer: DEV_TEXT },
+                        { title: 'Механическая работа. Единицы работы.', answer: DEV_TEXT },
+                        { title: 'Превращение одного вида механической энергии в другой.', answer: DEV_TEXT }
+                    ],
+                    task: {
+                        text: 'Кусочек сахара имеет размер: 2,5×1×0,7 см. Его масса равна 3,2 г. Определите плотность сахара.',
+                        shortAnswer: DEV_TEXT,
+                        solution: DEV_TEXT
+                    }
+                }
+            ];
+
+            let studiedItems = {};
+            try {
+                studiedItems = JSON.parse(localStorage.getItem(STORAGE_PROGRESS) || '{}') || {};
+            } catch (e) {
+                studiedItems = {};
+            }
+
+            let currentTicketId = 1;
+            let randomTimerId = null;
+            let examIntervalId = null;
+            let examSecondsLeft = 0;
+            let isExamMode = false;
+
+            const ticketSelect = document.getElementById('ticketSelect');
+            const ticketPills = document.getElementById('ticketPills');
+            const ticketCard = document.getElementById('ticketCard');
+            const loaderWrap = document.getElementById('loaderWrap');
+            const toggleAllAnswersBtn = document.getElementById('toggleAllAnswersBtn');
+            const themeToggleBtn = document.getElementById('themeToggleBtn');
+            const examModeBtn = document.getElementById('examModeBtn');
+            const examBar = document.getElementById('examBar');
+            const examTimerEl = document.getElementById('examTimer');
+            const searchInput = document.getElementById('searchInput');
+            const searchFilter = document.getElementById('searchFilter');
+            const searchResults = document.getElementById('searchResults');
+
+            function sendGoal(name, params) {
+                if (typeof window.ym === 'function') {
+                    try {
+                        window.ym(YM_ID, 'reachGoal', name, params || {});
+                    } catch (e) {}
+                }
+            }
+
+            function saveStudied() {
+                try {
+                    localStorage.setItem(STORAGE_PROGRESS, JSON.stringify(studiedItems));
+                } catch (e) {}
+            }
+
+            function isInDev(val) {
+                return !val || String(val).trim().toLowerCase() === DEV_TEXT.toLowerCase();
+            }
+
+            function escapeHtml(str) {
+                return String(str)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;');
+            }
+
+            function showToast(msg) {
+                const wrap = document.getElementById('toastContainer');
+                const toast = document.createElement('div');
+                toast.className = 'toast';
+                toast.textContent = msg;
+                wrap.appendChild(toast);
+                setTimeout(() => toast.remove(), 2800);
+            }
+
+            function countReady(ticket) {
+                let n = 0;
+                ticket.questions.forEach(q => { if (!isInDev(q.answer)) n++; });
+                if (!isInDev(ticket.task.shortAnswer) || !isInDev(ticket.task.solution)) n++;
+                return n;
+            }
+
+            function countStudied(ticket) {
+                let n = 0;
+                for (let i = 0; i < 3; i++) {
+                    if (studiedItems[`${ticket.id}-q${i}`]) n++;
+                }
+                if (studiedItems[`${ticket.id}-task`]) n++;
+                return n;
+            }
+
+            // Живой блик на стеклянных панелях (только для устройств с мышью)
+            if (window.matchMedia('(hover: hover)').matches) {
+                document.addEventListener('pointermove', e => {
+                    const surfaces = document.querySelectorAll('.liquid-surface');
+                    surfaces.forEach(el => {
+                        const rect = el.getBoundingClientRect();
+                        if (
+                            e.clientX >= rect.left - 80 &&
+                            e.clientX <= rect.right + 80 &&
+                            e.clientY >= rect.top - 80 &&
+                            e.clientY <= rect.bottom + 80
+                        ) {
+                            el.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+                            el.style.setProperty('--my', `${e.clientY - rect.top}px`);
+                        }
+                    });
+                }, { passive: true });
+            }
+
+            // Тема
+            function applyTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                themeToggleBtn.textContent = theme === 'dark' ? '🌙 Тёмная' : '☀️ Светлая';
+                try { localStorage.setItem(STORAGE_THEME, theme); } catch (e) {}
+            }
+
+            applyTheme(localStorage.getItem(STORAGE_THEME) || 'dark');
+
+            themeToggleBtn.addEventListener('click', () => {
+                const cur = document.documentElement.getAttribute('data-theme');
+                applyTheme(cur === 'dark' ? 'light' : 'dark');
+            });
+
+            // Вкладки
+            function switchView(viewId) {
+                document.querySelectorAll('.view-section').forEach(s => s.classList.toggle('active', s.id === viewId));
+                document.querySelectorAll('.seg-btn').forEach(b => b.classList.toggle('active', b.dataset.view === viewId));
+                if (viewId === 'searchView') renderSearch();
+            }
+
+            document.querySelectorAll('.seg-btn').forEach(btn => {
+                btn.addEventListener('click', () => switchView(btn.dataset.view));
+            });
+
+            // Контролы выбора билета
+            function renderControls() {
+                ticketSelect.innerHTML = '';
+                ticketPills.innerHTML = '';
+
+                TICKETS.forEach(t => {
+                    const ready = countReady(t);
+                    const studied = countStudied(t);
+
+                    const opt = document.createElement('option');
+                    opt.value = String(t.id);
+                    opt.textContent = `Билет №${t.id} — ${t.questions[0].title.slice(0, 44)}...`;
+                    ticketSelect.appendChild(opt);
+
+                    const pill = document.createElement('button');
+                    pill.type = 'button';
+                    pill.className = 'ticket-pill';
+                    if (t.id === currentTicketId) pill.classList.add('active');
+                    if (ready > 0) pill.classList.add('has-answers');
+                    if (studied === 4) pill.classList.add('studied');
+                    pill.setAttribute('aria-label', `Билет №${t.id}`);
+                    pill.innerHTML = `<span>${t.id}</span><span class="pill-dot"></span>`;
+                    pill.addEventListener('click', () => openTicket(t.id, true));
+                    ticketPills.appendChild(pill);
+                });
+
+                ticketSelect.value = String(currentTicketId);
+            }
+
+            function renderAnswerHtml(val) {
+                if (isInDev(val)) {
+                    return `<div class="dev-placeholder"><span aria-hidden="true">🚧</span><span>${DEV_TEXT}</span></div>`;
+                }
+                return val;
+            }
+
+            function updateHeaderStats() {
+                const t = TICKETS.find(x => x.id === currentTicketId);
+                if (!t) return;
+                document.getElementById('ticketReadinessText').textContent =
+                    `Готово ответов: ${countReady(t)} из 4 • Выучено вами: ${countStudied(t)} из 4`;
+            }
+
+            function createAccordionBtn(targetId, closedLabel, openLabel) {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'toggle-btn';
+                btn.setAttribute('aria-expanded', 'false');
+                btn.setAttribute('aria-controls', targetId);
+                btn.dataset.closedLabel = closedLabel;
+                btn.dataset.openLabel = openLabel;
+                btn.textContent = closedLabel;
+
+                btn.addEventListener('click', () => {
+                    const box = document.getElementById(targetId);
+                    const willOpen = !box.classList.contains('is-open');
+                    box.classList.toggle('is-open', willOpen);
+                    btn.classList.toggle('is-open', willOpen);
+                    btn.setAttribute('aria-expanded', String(willOpen));
+                    btn.textContent = willOpen ? openLabel : closedLabel;
+                    updateToggleAllLabel();
+                    if (willOpen) sendGoal('reveal_answer', { target: targetId });
+                });
+                return btn;
+            }
+
+            function createStudyBtn(key) {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                const sync = () => {
+                    const done = Boolean(studiedItems[key]);
+                    btn.className = `glass-btn glass-btn-sm ${done ? 'glass-btn-success' : ''}`;
+                    btn.textContent = done ? '✅ Выучил' : '⬜ Отметить';
+                };
+                sync();
+                btn.addEventListener('click', () => {
+                    if (studiedItems[key]) delete studiedItems[key];
+                    else studiedItems[key] = true;
+                    saveStudied();
+                    sync();
+                    renderControls();
+                    updateHeaderStats();
+                });
+                return btn;
+            }
+
+            function updateToggleAllLabel() {
+                const boxes = ticketCard.querySelectorAll('.accordion');
+                const anyClosed = Array.from(boxes).some(b => !b.classList.contains('is-open'));
+                toggleAllAnswersBtn.textContent = anyClosed ? '👁️ Показать все' : '🔒 Скрыть все';
+            }
+
+            function renderTicket(id) {
+                const ticket = TICKETS.find(t => t.id === Number(id));
+                if (!ticket) return;
+
+                currentTicketId = ticket.id;
+                loaderWrap.classList.remove('active');
+                ticketCard.style.display = 'block';
+
+                document.getElementById('ticketTitle').textContent = `Билет №${ticket.id}`;
+                updateHeaderStats();
+
+                const readyCount = countReady(ticket);
+                const meta = document.getElementById('ticketMeta');
+                meta.innerHTML = '';
+
+                const b1 = document.createElement('span');
+                b1.className = 'glass-badge badge-info';
+                b1.textContent = '3 вопроса + задача';
+                meta.appendChild(b1);
+
+                const b2 = document.createElement('span');
+                b2.className = `glass-badge ${readyCount === 4 ? 'badge-ready' : 'badge-dev'}`;
+                b2.textContent = readyCount === 4 ? 'Все ответы готовы' : `Готово ${readyCount}/4`;
+                meta.appendChild(b2);
+
+                const items = document.getElementById('ticketItems');
+                items.innerHTML = '';
+
+                ticket.questions.forEach((q, idx) => {
+                    const card = document.createElement('article');
+                    card.className = 'q-card';
+
+                    const ready = !isInDev(q.answer);
+                    const accId = `acc-t${ticket.id}-q${idx}`;
+
+                    const top = document.createElement('div');
+                    top.className = 'q-top';
+                    top.innerHTML = `
+                        <span class="q-label">Вопрос ${idx + 1}</span>
+                        <span class="glass-badge ${ready ? 'badge-ready' : 'badge-dev'}">${ready ? 'Готово' : DEV_TEXT}</span>
+                    `;
+
+                    const qText = document.createElement('p');
+                    qText.className = 'q-text';
+                    qText.textContent = q.title;
+
+                    const actions = document.createElement('div');
+                    actions.className = 'q-actions';
+                    actions.appendChild(createAccordionBtn(accId, '👁️ Ответ', '🔒 Скрыть'));
+                    actions.appendChild(createStudyBtn(`${ticket.id}-q${idx}`));
+
+                    const acc = document.createElement('div');
+                    acc.className = 'accordion';
+                    acc.id = accId;
+                    acc.innerHTML = `<div class="accordion-inner"><div class="answer-lens">${renderAnswerHtml(q.answer)}</div></div>`;
+
+                    card.append(top, qText, actions, acc);
+                    items.appendChild(card);
+                });
+
+                // Задача №4
+                const taskCard = document.createElement('article');
+                taskCard.className = 'q-card task-card';
+
+                const taskReady = !isInDev(ticket.task.shortAnswer) || !isInDev(ticket.task.solution);
+                const taskAccId = `acc-t${ticket.id}-task`;
+
+                const taskTop = document.createElement('div');
+                taskTop.className = 'q-top';
+                taskTop.innerHTML = `
+                    <span class="q-label">Задача №4</span>
+                    <span class="glass-badge ${taskReady ? 'badge-ready' : 'badge-dev'}">${taskReady ? 'Готово' : DEV_TEXT}</span>
+                `;
+
+                const taskText = document.createElement('p');
+                taskText.className = 'q-text';
+                taskText.textContent = ticket.task.text;
+
+                const taskActions = document.createElement('div');
+                taskActions.className = 'q-actions';
+                taskActions.appendChild(createAccordionBtn(taskAccId, '⚡ Ответ и решение', '🔒 Скрыть'));
+                taskActions.appendChild(createStudyBtn(`${ticket.id}-task`));
+
+                const taskAcc = document.createElement('div');
+                taskAcc.className = 'accordion';
+                taskAcc.id = taskAccId;
+                taskAcc.innerHTML = `
+                    <div class="accordion-inner">
+                        <div class="task-split">
+                            <div class="answer-lens">
+                                <div class="sub-box-title">Ответ</div>
+                                ${renderAnswerHtml(ticket.task.shortAnswer)}
+                            </div>
+                            <div class="answer-lens">
+                                <div class="sub-box-title">Правильное решение</div>
+                                ${renderAnswerHtml(ticket.task.solution)}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                taskCard.append(taskTop, taskText, taskActions, taskAcc);
+                items.appendChild(taskCard);
+
+                renderControls();
+                updateToggleAllLabel();
+            }
+
+            function openTicket(id, track) {
+                if (randomTimerId) {
+                    clearTimeout(randomTimerId);
+                    randomTimerId = null;
+                }
+                const numId = Number(id);
+                if (track) sendGoal('open_ticket', { ticketId: numId });
+                renderTicket(numId);
+            }
+
+            ticketSelect.addEventListener('change', () => openTicket(ticketSelect.value, true));
+
+            toggleAllAnswersBtn.addEventListener('click', () => {
+                const boxes = ticketCard.querySelectorAll('.accordion');
+                const anyClosed = Array.from(boxes).some(b => !b.classList.contains('is-open'));
+                boxes.forEach(box => {
+                    box.classList.toggle('is-open', anyClosed);
+                    const btn = ticketCard.querySelector(`[aria-controls="${box.id}"]`);
+                    if (btn) {
+                        btn.classList.toggle('is-open', anyClosed);
+                        btn.setAttribute('aria-expanded', String(anyClosed));
+                        btn.textContent = anyClosed ? btn.dataset.openLabel : btn.dataset.closedLabel;
+                    }
+                });
+                updateToggleAllLabel();
+            });
+
+            document.getElementById('randomTicketBtn').addEventListener('click', () => {
+                if (randomTimerId) clearTimeout(randomTimerId);
+                ticketCard.style.display = 'none';
+                loaderWrap.classList.add('active');
+
+                randomTimerId = setTimeout(() => {
+                    randomTimerId = null;
+                    let nextId = TICKETS[0].id;
+                    do {
+                        nextId = TICKETS[Math.floor(Math.random() * TICKETS.length)].id;
+                    } while (nextId === currentTicketId && TICKETS.length > 1);
+                    sendGoal('random_ticket', { ticketId: nextId });
+                    openTicket(nextId, true);
+                }, 420);
+            });
+
+            // Режим экзамена
+            function formatTime(sec) {
+                const m = Math.floor(sec / 60);
+                const s = sec % 60;
+                return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+            }
+
+            function stopExam() {
+                isExamMode = false;
+                if (examIntervalId) {
+                    clearInterval(examIntervalId);
+                    examIntervalId = null;
+                }
+                examBar.classList.remove('active');
+                examModeBtn.disabled = false;
+            }
+
+            examModeBtn.addEventListener('click', () => {
+                if (isExamMode) return;
+                isExamMode = true;
+                switchView('ticketsView');
+
+                const rand = TICKETS[Math.floor(Math.random() * TICKETS.length)];
+                openTicket(rand.id, true);
+
+                examSecondsLeft = 15 * 60;
+                examTimerEl.textContent = formatTime(examSecondsLeft);
+                examBar.classList.add('active');
+                examModeBtn.disabled = true;
+                sendGoal('start_exam', { ticketId: rand.id });
+
+                examIntervalId = setInterval(() => {
+                    examSecondsLeft--;
+                    examTimerEl.textContent = formatTime(Math.max(0, examSecondsLeft));
+                    if (examSecondsLeft <= 0) {
+                        stopExam();
+                        showToast('⏰ Время на подготовку вышло!');
+                    }
+                }, 1000);
+            });
+
+            document.getElementById('finishExamBtn').addEventListener('click', () => {
+                sendGoal('finish_exam', { ticketId: currentTicketId });
+                stopExam();
+                showToast('🎉 Отлично! Сверьте свои ответы с карточками ниже.');
+            });
+
+            document.getElementById('cancelExamBtn').addEventListener('click', () => {
+                stopExam();
+                showToast('Режим экзамена завершён');
+            });
+
+            // Поиск
+            function renderSearch() {
+                const qText = searchInput.value.trim().toLowerCase();
+                const filter = searchFilter.value;
+                searchResults.innerHTML = '';
+
+                const hits = [];
+                TICKETS.forEach(t => {
+                    t.questions.forEach((q, idx) => {
+                        const ready = !isInDev(q.answer);
+                        if (filter === 'ready' && !ready) return;
+                        if (filter === 'dev' && ready) return;
+                        if (!qText || `${q.title} ${q.answer}`.toLowerCase().includes(qText)) {
+                            hits.push({ ticketId: t.id, label: `Билет №${t.id} • Вопрос ${idx + 1}`, text: q.title, ready });
+                        }
+                    });
+
+                    const taskReady = !isInDev(t.task.shortAnswer) || !isInDev(t.task.solution);
+                    if (
+                        (filter === 'all' || (filter === 'ready' && taskReady) || (filter === 'dev' && !taskReady)) &&
+                        (!qText || t.task.text.toLowerCase().includes(qText))
+                    ) {
+                        hits.push({ ticketId: t.id, label: `Билет №${t.id} • Задача №4`, text: t.task.text, ready: taskReady });
+                    }
+                });
+
+                if (!hits.length) {
+                    searchResults.innerHTML = '<div style="color:var(--text-secondary); padding:8px 0;">По вашему запросу ничего не найдено.</div>';
+                    return;
+                }
+
+                hits.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'q-card';
+                    card.innerHTML = `
+                        <div class="q-top">
+                            <span class="q-label">${escapeHtml(item.label)}</span>
+                            <span class="glass-badge ${item.ready ? 'badge-ready' : 'badge-dev'}">${item.ready ? 'Готово' : DEV_TEXT}</span>
+                        </div>
+                        <p class="q-text">${escapeHtml(item.text)}</p>
+                    `;
+                    const goBtn = document.createElement('button');
+                    goBtn.type = 'button';
+                    goBtn.className = 'glass-btn glass-btn-sm glass-btn-primary';
+                    goBtn.textContent = `Открыть билет №${item.ticketId}`;
+                    goBtn.addEventListener('click', () => {
+                        switchView('ticketsView');
+                        openTicket(item.ticketId, true);
+                    });
+                    card.appendChild(goBtn);
+                    searchResults.appendChild(card);
+                });
+            }
+
+            searchInput.addEventListener('input', renderSearch);
+            searchFilter.addEventListener('change', renderSearch);
+
+            // Старт
+            openTicket(1, false);
+        })();
+    </script>
+</body>
+</html>
